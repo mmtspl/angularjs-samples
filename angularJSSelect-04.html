@@ -1,0 +1,28 @@
+<!DOCTYPE html>  
+<html>  
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>  
+<body>  
+<h2>Angular JS Select Sample Application - Using ng-options </h2>  
+
+<div ng-app="myApp" ng-controller="myCtrl">  
+<p>Select a car:</p>  
+<select ng-model="selectedCar" ng-options="x.model for x in cars">  
+</select>  
+<h1>You selected: {{selectedCar.model}}</h1>  
+<p>It's color is: {{selectedCar.color}}</p>  
+<p>It's rank is: {{selectedCar.rank}}</p>  
+</div>  
+<script>  
+var app = angular.module('myApp', []);  
+app.controller('myCtrl', function($scope) {  
+       $scope.cars = [  
+        {model : "Ford", color : "red", rank : "1st"},  
+        {model : "Honda", color : "white", rank : "2nd"},  
+        {model : "Volvo", color : "black", rank : "3rd"},  
+        {model : "Hundai", color : "gray", rank : "4th"}  
+    ];  
+  
+});  
+</script>  
+</body>  
+</html>  
